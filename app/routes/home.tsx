@@ -1,4 +1,5 @@
 import type {Route} from "./+types/home";
+import { OverviewPage } from "../ui/page/index/index.jsx";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -8,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-    return <div id="react-app" className="overview-page">
-        <h1>Ready to migrate</h1>
-    </div>;
+    return (
+        <OverviewPage />
+    );
 }
