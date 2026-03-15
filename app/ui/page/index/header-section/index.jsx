@@ -7,6 +7,7 @@ import cn from 'classnames';
 import {Container, Section} from "../../../components/layout/index.jsx";
 
 import {cardsData} from './data';
+import jetbrainsLogo from '../../../../../assets/jetbrains-logo.svg';
 
 import './index.scss';
 
@@ -36,7 +37,7 @@ export function HeaderSection() {
                     </div>
 
                     <div className="header-section__contributors">
-                        <img src="../../../../../assets/jetbrains-logo.svg" alt=""></img>
+                        <img src={jetbrainsLogo} alt=""></img>
                         <p className={textCn('rs-text-2')}>
                             Developed by <a className={textCn('rs-link')}
                                             href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a

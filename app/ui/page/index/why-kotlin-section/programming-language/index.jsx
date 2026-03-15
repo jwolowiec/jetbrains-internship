@@ -17,8 +17,13 @@ const initialIndex = Math.floor(Math.random() * tabs.length);
 
 export function ProgrammingLanguage() {
     const textCn = useTextStyles();
-    const [activeIndex, setActiveIndex] = useState(initialIndex);
+    const [activeIndex, setActiveIndex] = useState(0);
     const [highlighted, setHighlighted] = useState('');
+
+    useEffect(() => {
+        const randomStart = Math.floor(Math.random() * tabs.length);
+        setActiveIndex(randomStart);
+    }, []);
 
     useEffect(() => {
         const currentCode = tabs[activeIndex].code;
@@ -55,7 +60,7 @@ export function ProgrammingLanguage() {
                 <TabSeparator/>
                 <pre className="programming-language__code kto-offset-top-16">
                     <code className="hljs" dangerouslySetInnerHTML={{
-                        __html: highlighted || tabs[activeIndex].code
+                        __html: highlighted
                     }} />
                 </pre>
             </div>
